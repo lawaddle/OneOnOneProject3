@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        const winner = {Name:"", img:""}
+        function intialize()
+        {
+            winnerInfo = sessionStorage.getItem('gameWinner');
+            winnerNameDis = document.getElementById("winner");
+            winnerImgDis = document.getElementById("winnerImg");
+            playerInfoDis = document.getElementById("playerInfo");
+            setScreen();
+            display();
+        }
+        function setScreen()
+        {
+            if(winnerInfo === "draw")
+            {
+                winner.Name = "Nobody";
+                winner.img = "imgs/shrug.jpg";
+                playerInfo = "It was a draw";
+            } else if (winnerInfo === "Computer"){
+                winner.Name = winnerInfo;
+                winner.img = "imgs/wheatleyCrab.jpg";
+                playerInfo = "You lost to the computer";
+            } else
+            {
+                winner.Name = winnerInfo;
+                winner.img = "imgs/narwal.jpg";
+                playerInfo = "You Won!";
+            }
+        }
+        function redirect()
+        {
+            window.location.href = "FightingScreen.html"
+        }
+        function display() {
+            winnerNameDis.innerHTML = winner.Name;
+            winnerImgDis.src = winner.img;
+            playerInfoDis.innerHTML = playerInfo;
+        }
+    </script>
+    <style>
+        body{
+            font-family: "Comic Sans MS";
+        }
+        button{
+            border: 2px solid black;
+            background-color: lightblue;
+            font-family: "Comic Sans MS";
+        }
+    </style>
+</head>
+<body onload="intialize();">
+    <div>The Winner Is</div>
+    <div id="winner"></div>
+    <img id="winnerImg"/>
+    <div id="playerInfo"></div>
+    <button onclick="redirect();">Replay</button>
+</body>
+</html>

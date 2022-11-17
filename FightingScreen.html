@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>One on One Fighter - Lawer</title>
+    <script src = "FightingLogicNoExtra.js"></script>
+    <link rel = "stylesheet" href="FightingLooks.css" />
+</head>
+<body onload="initialize();">
+    <div id="Title">One on One Fighter</div>
+    <button class="instructions">
+        <span>Instructions</span>
+        <div class="instructions-content">
+            <p>
+                Each turn you and the computer will choose to attack,
+                defend, or (in the right conditions) use their special move.
+                If a fighter's energy is at least double their opponent's
+                or their opponent's energy is below zero, they can perform a special
+                move and win the game.
+            </p>
+        </div>
+    </button>
+    <div class = "gameScreen-container">
+        <div id ="Player" class="gameScreen-child">
+            <img id="playerIMG"/>
+            <h1 id="playerName"></h1>
+            <h3 id="playerStats"></h3>
+                <div class="playerButtons-container" id="buttons">
+                    <button id="playerAttack" onclick="turn(TurnChoice.Attack)">ATTACK</button>
+                    <button id="playerDefend" onclick="turn(TurnChoice.Defend)">DEFEND</button>
+                    <button id="playerSpecialMove" onclick="turn(TurnChoice.Special)">SPECIAL MOVE</button>
+                </div>
+            <h5 id="playerLog" class="log"></h5>
+        </div>
+        <div id ="Computer" class="gameScreen-child">
+            <img id="computerIMG"/>
+            <h1 id="computerName"></h1>
+            <h3 id="computerStats"></h3>
+            <div id="computerLog" class="log"></div>
+        </div>
+    </div>
+</body>
+</html>
