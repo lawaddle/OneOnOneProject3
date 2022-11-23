@@ -1,3 +1,5 @@
+let playerNameDis, playerStatsDis,playerImgDis, playerLogDis, computerNameDis, computerStatsDis, computerImgDis, computerLogDis,
+    playerSpecialMoveButton, buttonsDis, computerEngStart, playerEngStart;
 function initialize(userFighter, compFighter){
     player = new Fighter("john", 6, 6, 6, 30, "imgs/narwal.jpg");
     computer = new Fighter("Computer", 6, 6, 6, 30, "imgs/wheatleyCrab.jpg");
@@ -112,17 +114,18 @@ function chooseIncreaseOrDecrease(Fighter)
 
 function setStatsAtStartMath(Fighter)
 {
+    let change;
     let stats = [Fighter.strength, Fighter.cunning, Fighter.speed, Fighter.energy];
         for (const element of stats) {
 
                console.log(element.title + "\'s temp starting value: " + element.value);
                if (element.title === "eng") {
-                   var change = randomNum(0, 6);
+                   change = randomNum(0, 6);
                    change *= element.startChange;
                    element.value += change;
                } else {
 
-                   var change = randomNum(0, 1);
+                   change = randomNum(0, 1);
                    change *= element.startChange;
                    element.value += change;
                }
